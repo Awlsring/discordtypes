@@ -20,7 +20,7 @@ type InteractionData struct {
 	ID            string                                   `json:"id"`
 	Name          string                                   `json:"name"`
 	Type          int                                      `json:"type"` // https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-type
-	Resolved      *ResolvedData                            `json:"resolved,omitempty`
+	Resolved      *ResolvedData                            `json:"resolved,omitempty"`
 	Options       *ApplicationCommandInteractionDataOption `json:"options,omitempty"`
 	CustomID      string                                   `json:"custom_id,omitempty"`
 	ComponentType int                                      `json:"component_type,omitempty"`
@@ -74,14 +74,14 @@ type SelectOption struct {
 	Label       string `json:"label"`
 	Value       string `json:"value"`
 	Description string `json:"description,omitempty"`
-	Emoji       Emoji  `json:"emoji,omitempty"`
+	Emoji       *Emoji `json:"emoji,omitempty"`
 	Default     bool   `json:"default,omitempty"`
 }
 
 // https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-interaction-response-structure
 type InteractionResponse struct {
-	Type int                            `json:"type"` // https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-interaction-callback-type
-	Data DiscordInteractionResponseData `json:"data,omitempty"`
+	Type int                      `json:"type"` // https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-interaction-callback-type
+	Data *InteractionCallbackData `json:"data,omitempty"`
 }
 
 // https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-interaction-callback-data-structure

@@ -30,8 +30,6 @@ type Channel struct {
 	Permissions                string          `json:"permissions,omitempty"`
 }
 
-// `json:",omitempty"`
-
 // https://discord.com/developers/docs/resources/channel#overwrite-object
 type Overwrite struct {
 	ID    string `json:"id"`
@@ -89,7 +87,7 @@ type Message struct {
 	Thread             *Channel            `json:"channel,omitempty"`
 	Components         []*Component        `json:"components,omitempty"`
 	StickerItems       []*StickerItem      `json:"sticker_items,omitempty"`
-	Sticker            Sticker             `json:"Sticker,omitempty"`
+	Sticker            *Sticker            `json:"sticker,omitempty"`
 }
 
 // https://discord.com/developers/docs/resources/channel#message-reference-object-message-reference-structure
