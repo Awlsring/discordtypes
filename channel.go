@@ -1,5 +1,7 @@
 package discordtypes
 
+import "io"
+
 // https://discord.com/developers/docs/resources/channel#channel-object
 type Channel struct {
 	ID                         string          `json:"id"`
@@ -197,4 +199,38 @@ type AllowedMentions struct {
 	Roles       []string `json:"roles,omitempty"`
 	Users       []string `json:"users,omitempty"`
 	RepliedUser bool     `json:"replied_user,omitempty"`
+}
+
+type File struct {
+	Name        string
+	ContentType string
+	Reader      io.Reader
+}
+
+// https://discord.com/developers/docs/resources/channel#create-message
+type CreateMessageData struct {
+	Content          string            `json:"content,omitempty"`
+	TTS              bool              `json:"tts,omitempty"`
+	File             *File             `json:"file,omitempty"`
+	Embeds           []*Embed          `json:"embeds,omitempty"`
+	AllowedMentions  *AllowedMentions  `json:"allowed_mentions,omitempty"`
+	MessageReference *MessageReference `json:"message_reference,omitempty"`
+	Components       []*Component      `json:"components,omitempty"`
+	StickerIDs       []string          `json:"sitcker_ids,omitempty"`
+}
+
+// https://discord.com/developers/docs/resources/channel#edit-message
+type EditMessageData struct {
+	Content         string           `json:"content,omitempty"`
+	Embeds          []*Embed         `json:"embeds,omitempty"`
+	Flags           int              `json:"flags,omitempty"`
+	File            *File            `json:"file,omitempty"`
+	AllowedMentions *AllowedMentions `json:"allowed_mentions,omitempty"`
+	Attachments     []*Attachment    `json:"message_reference,omitempty"`
+	Components      []*Component     `json:"components,omitempty"`
+}
+
+// https://discord.com/developers/docs/resources/channel#bulk-delete-messages
+type BulkDeleteMessages struct {
+	Messages []string `json:"messages,omitempty"`
 }
