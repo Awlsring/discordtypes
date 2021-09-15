@@ -2,7 +2,7 @@ package discordtypes
 
 // https://discord.com/developers/docs/resources/emoji#emoji-object
 type Emoji struct {
-	ID            string   `json:"id"`
+	ID            string   `json:"id,omitempty"`
 	Name          string   `json:"name"`
 	Roles         []string `json:"roles,omitempty"`
 	User          *User    `json:"user,omitempty"`

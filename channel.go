@@ -160,7 +160,7 @@ type EmbedImage struct {
 type EmbedField struct {
 	Name   string `json:"name"`
 	Value  string `json:"value"`
-	Inline bool   `json:"inline,omitempty"`
+	Inline bool   `json:"inline"`
 }
 
 // https://discord.com/developers/docs/resources/channel#embed-object-embed-thumbnail-structure
