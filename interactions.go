@@ -17,15 +17,15 @@ type Interaction struct {
 
 // https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-data-structure
 type InteractionData struct {
-	ID            string                                   `json:"id"`
-	Name          string                                   `json:"name"`
-	Type          int                                      `json:"type"` // https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-type
-	Resolved      *ResolvedData                            `json:"resolved,omitempty"`
-	Options       *ApplicationCommandInteractionDataOption `json:"options,omitempty"`
-	CustomID      string                                   `json:"custom_id,omitempty"`
-	ComponentType int                                      `json:"component_type,omitempty"`
-	Values        []*SelectOption                          `json:"values,omitempty"`
-	TargetID      string                                   `json:"target_id,omitempty"`
+	ID            string                                     `json:"id"`
+	Name          string                                     `json:"name"`
+	Type          int                                        `json:"type"` // https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-type
+	Resolved      *ResolvedData                              `json:"resolved,omitempty"`
+	Options       []*ApplicationCommandInteractionDataOption `json:"options,omitempty"`
+	CustomID      string                                     `json:"custom_id,omitempty"`
+	ComponentType int                                        `json:"component_type,omitempty"`
+	Values        []*SelectOption                            `json:"values,omitempty"`
+	TargetID      string                                     `json:"target_id,omitempty"`
 }
 
 //https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-interaction-data-option-structure
