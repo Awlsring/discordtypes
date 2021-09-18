@@ -31,8 +31,8 @@ type InteractionData struct {
 //https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-interaction-data-option-structure
 type ApplicationCommandInteractionDataOption struct {
 	Name    string                                     `json:"name"`
-	Type    string                                     `json:"type"`
-	Value   int                                        `json:"value,omitempty"`
+	Type    int                                        `json:"type"`
+	Value   string                                     `json:"value,omitempty"`
 	Options []*ApplicationCommandInteractionDataOption `json:"options,omitempty"`
 }
 
